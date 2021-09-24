@@ -1,0 +1,116 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Salina's Whimsical Website</title>
+        <style type="text/css">
+          body {
+              color:white;
+              padding: 10px;
+              font-family: cursive;
+              background-image:url("images/297962.jpg");
+          }
+          header {
+              font-size: 1.5em;
+              font-weight:bold;
+          }
+          
+          #all-contents {
+              max-width: 800px;
+              margin: auto;
+          }
+  
+          /* navigation menu */
+          nav {
+              margin:6px;
+              border-style: dotted;
+              border-radius: 30px;
+              display: flex;
+              padding: 10px;
+              background-image:url(images/stars.jpg)  
+          }
+          h1 {
+              display: flex;
+              align-items: center;
+              color: rgb(255, 255, 255);
+              flex: 1;
+          }
+          #nav-ul {
+              list-style-image: none;
+          }
+          .nav-li {
+              display: inline-block;
+              padding: 0 10px;
+          }
+          .nav-a {
+              text-decoration: none;
+              color: #fff;
+          }
+  
+          /* main container area beneath menu */
+          main {
+              display: flex;
+              border-style: initial;
+              border-radius: 30px;
+              background-image:url(images/297950.jpg); 
+          }
+          .content {
+              flex: 1;
+              padding: 15px;
+          }
+         /* portfolio styles */
+          .content h1 {
+                color: black;
+                padding: 10p 
+            }
+            
+            #portfolio {
+                list-style-type:none;
+                padding: 0;
+                color: white; 
+            }
+            
+            #portfolio li {
+                background: #fff;
+                padding: 20px;
+                border-radius: 10px;
+                margin-bottom: 10px;
+            }
+            
+            #portfolio li:hover {
+                background: #eee;
+            } 
+            
+            #portfolio a {
+                text-decoration:none;
+                color:black;
+            }
+      </style>
+
+    </head>
+    <body>
+      <div id="all-contents">
+            <nav>
+                <h1>Salina's Whimsical Website</h1>
+                <ul id="nav-ul">
+                    <li class="nav-li">
+                      <a class="nav-a" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-li">
+                      <a class="nav-a" href="portfolio.html">Portfolio</a>
+                    </li>
+                </ul>
+            </nav>
+            <main>
+              <div class="content">
+                  <h2>Portfolio</h2>
+                  <ul id="porfolio">
+                    <li><a href="projects/platformer/">Platformer : A cannon - dodging, collectible - grabbing adventure game for Halleb0t</a></li>
+                    <li><a href="projects/bouncing-box/">Bouncing Box : A project that gives you a taste of game development on the web </a></li>
+                    <li><a href="projects/circularity/">Circularity : A motion poem using random number generation and velocity applied to circle shapes...</a></li>                
+                  </ul>
+              </div>
+            </main>
+    
+      </div>
+    </body>
+</html>
