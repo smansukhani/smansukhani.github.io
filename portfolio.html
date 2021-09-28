@@ -3,7 +3,7 @@
     <head>
         <title>Salina's Whimsical Website</title>
         <style type="text/css"> 
-         a { color:white; } /* CSS link color */       
+         a { color:white; } /* CSS link color */   
          body {
               color:white;
               padding: 10px;
@@ -27,7 +27,8 @@
               border-radius: 30px;
               display: flex;
               padding: 10px;
-              background-image:url(images/stars.jpg)  
+              border-color: yellow;
+              background-image:url(images/stars.jpg) 
           }
           h1 {
               display: flex;
@@ -49,30 +50,33 @@
   
           /* main container area beneath menu */
           main {
-              display: flex;
-              border-style: initial;
-              border-radius: 30px;
-              background-image:url(images/297950.jpg); 
-          }
+                background: rgb(231, 173, 236);
+                display: flex;
+                border-style:initial;
+                background-image: url("images/297950.jpg");
+                border-radius: 30px;
+                width:fit-content;
+                margin-left:100px;
+          } 
           .content {
               flex: 1;
               padding: 15px;
           }
          /* portfolio styles */
-          .content h1 {
+          .content h1 {        
                 color: black;
-                padding: 10p 
+                padding: 10px;
             }
             
             #portfolio {
                 list-style-type:none;
-                padding: 0;
-                color: white; 
+                padding: 0px;
+                color: white;  
             }
             
             #portfolio li {
                 background: #fff;
-                padding: 20px;
+                padding: 10px;
                 border-radius: 10px;
                 margin-bottom: 10px;
             }
@@ -83,9 +87,20 @@
             
             #portfolio a {
                 text-decoration:none;
-                color: white; 
+                color: white;           
             }
-      </style>
+            .portfolioimage {
+                margin-right: 25px;
+                padding: 10px;
+            }
+            .img {
+                width:250px;
+                height:250px;
+                border-radius: 30px;
+                border-style:ridge;
+                float: left;
+            }
+          </style>
 
     </head>
     <body>
@@ -101,6 +116,7 @@
                     </li>
                 </ul>
             </nav>
+        </div>
             <main>
               <div class="content">
                   <h2>Portfolio</h2>
@@ -109,10 +125,11 @@
                     <li><a href="projects/bouncing-box/">Bouncing Box : A project that gives you a taste of game development on the web </a></li>
                     <li><a href="projects/circularity/">Circularity : A motion poem using random number generation and velocity applied to circle shapes...</a></li>                
                   </ul>
-                  <img class="sidebar-img" src="images/IMG-7552.jpg" width="200"height="200">
+              </div>
+              <div class="portfolioimage">
+                <img class="img" src="images/IMG-1421.jpg" width="250"height="300">
               </div>
             </main>
-    
       </div>
     </body>
 </html>
