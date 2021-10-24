@@ -173,9 +173,9 @@ Below are the following `types` available:
 ```javascript
 type.db         // worth 10 points
 type.max        // worth 20 points
-type.steve      // worth 30 points
-type.grace      // worth 40 points
-type.kennedi    // worth 50 points
+type.steve      // worth 20 points
+type.grace      // worth 20 points
+type.kennedi    // worth 20 points
 ```
 
 <hr> 
