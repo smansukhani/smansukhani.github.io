@@ -65,12 +65,14 @@
 			
 			// TODO 2 - Variable declarations 
 			var positionX = 0; 
-			var points = 0; 
+			var Points = 0;
+			var pointsY = 0;
 			var speed = 10; 
 			var positionY = 300; 
 			var speedY = 10;
 			var boardHeight = jQuery(window).height();
 			var boardWidth = 1200; 
+			var randNum = Math.random() * 100; 
 			/*
 			This Function will be called 20 times/second. Each time it is called,
 			it should move the Box to a new location. If the box drifts off the screen
@@ -78,22 +80,23 @@
 			*/
 			function update() { 
 				positionX = positionX + speed; 
-				moveBoxTo(positionX,positionY);
-				if (positionX > boardWidth) {
-					speed = -speed;
-				}
-				if (positionX < 0) {
-					speed = -speed * 1;
-				}
-				positionY = positionY + speedY;
-				moveBoxTo(positionX,positionY); 
-				if (positionY > boardHeight) {
-					speedY = -speedY;
-				}
-				if (positionY < 0) {
-					speedY = -speedY * 1; 
-				}
-			}
+                moveBoxTo(positionX,positionY);
+                if (positionX > boardWidth) {
+                    speed = -speed;
+                }
+                if (positionX < 0) {
+                    speed = -speed * 1;
+                } 
+                positionY = positionY + speedY;
+                moveBoxTo(positionX,positionY);
+                if (positionY > boardHeight) {
+                    speedY = -speedY;
+                } 
+                if (positionY < 0) {
+                    speedY = -speedY * 1; 
+                }
+
+            }
 
 			/* 
 			This Function will be called each time the box is clicked. Each time it is called,
@@ -102,16 +105,16 @@
 			*/
 			function handleBoxClick() {
 				positionX = 0;
-				points = points + 1;  
-				changeBoxText(points);
+				Points = Points + 1;  
+				changeBoxText(Points);
 				if (speed > 0) {
 					speed = speed + 3
 				} else if (speed < 0) {
 					speed = speed - 3; 
 				}
 				positionY = 300; 
-				points = points + 1; 
-				changeBoxText(points);
+				pointsY = pointsY + 1; 
+				changeBoxText(pointsY);
 				if (speed > 0) {
 					speed = speed + 3
 				} else if (speed < 0) {
