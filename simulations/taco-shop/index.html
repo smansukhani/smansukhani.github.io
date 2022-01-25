@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>TacoMania Madness</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        #menu,
+        #take-order {
+            display: flex;
+            flex-direction: row;
+            color: red;
+        }
+
+        #take-order>p {
+            padding-right: 10px;
+        }
+
+        .menu-item {
+            border: 3px solid black;
+        }
+
+        .menu-item>h4,
+        .menu-item>img {
+            padding: 10px;
+            padding-bottom: 5px;
+        }
+
+        img {
+            width: 250px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="all-contents">
+        <nav>
+            <h1>TacoMania Madness</h1>
+            <div id="take-order">
+                <p>When you're ready to place your order, click here: </p>
+                <button>Place Order</button>
+            </div>
+        </nav>
+        <main>
+            <h3>Menu</h3>
+            <div id="menu">
+                <div id="three-tacos" class="menu-item">
+                    <h4> #1 - Three Tacos</h4>
+                    <img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSG-phbs_RqH7HoN_2XLKiTXd0zTOeMGLncug&usqp=CAU">
+                    <h4>6.99</h4>
+                </div>
+                <div id="five-tacos" class="menu-item">
+                    <h4>#2 - Five Tacos</h4>
+                    <img src="https://i2.wp.com/thesuburbansoapbox.com/wp-content/uploads/2021/02/Birria-Tacos-8.jpg">
+                    <h4>9.99</h4>
+                </div>
+                <div id="nachos" class="menu-item">
+                    <h4> #3 - Nachos Supreme</h4>
+                    <img src="https://hips.hearstapps.com/hmg-prod/images/nachos-supreme-horizontal-1547669254.png">
+                    <h4>5.89</h4>
+                </div>
+                <div id="chicken-burrito" class="menu-item">
+                    <h4> #4 - Grilled Chicken Burrito</h4>
+                    <img
+                        src="https://4.bp.blogspot.com/-cI4geu0yGdM/XJTJ3vwwlmI/AAAAAAAADX4/X1DUMY2Eykgd74uRpR4-tLTx2X13OM0XgCLcBGAs/s1600/Grilled%2BChicken%2BBurrito%2Bat%2BThe%2BBusy%2BAbuelita.jpg">
+                    <h4>2.50</h4>
+                </div>
+                <div id="chicken-quesadilla" class="menu-item">
+                    <h4> #5 - 3 Chicken Quesadillas</h4>
+                    <img src="https://www.spendwithpennies.com/wp-content/uploads/2020/01/Chicken-Quesadillas-1.jpg">
+                    <h4>7.99</h4>
+                </div>
+                <div id="chicken-tostada" class="menu-item">
+                    <h4> #6 - Chicken Tostada</h4>
+                    <img
+                        src="https://assets.epicurious.com/photos/5ae1f58c46a4784fa17cebcd/4:6/w_887,h_1331,c_limit/chicken-tostada-recipe-042618.jpg">
+                    <h4>3.50</h4>
+                </div>
+                <div id="beef-salad" class="menu-item">
+                    <h4> #7 - Beef Salad</h4>
+                    <img
+                        src="https://img.taste.com.au/MvWt_W2C/taste/2019/08/charred-mexican-beef-salad-with-fresh-tomato-and-lime-salsa-153292-1.jpg">
+                    <h4>7.50</h4>
+                </div>
+                <div id="chips-salsa" class="menu-item">
+                    <h4> #8 - Chips and Salsa</h4>
+                    <img
+                        src="https://food.fnr.sndimg.com/content/dam/images/food/fullset/2013/12/9/0/FNK_Salsa-and-Chips_s4x3.jpg.rend.hgtvcom.616.462.suffix/1387411410179.jpeg">
+                    <h4>2.50</h4>
+                </div>
+                <div id="chimichangas" class="menu-item">
+                    <h4> #9 - Beef and Bean Chimichanga</h4>
+                    <img
+                        src="https://www.ladybehindthecurtain.com/wp-content/uploads/2020/02/Beef-and-Bean-Chimichangas-5.jpg">
+                    <h4>8.50</h4>
+                </div>
+                <div id="drinks" class="menu-item">
+                    <h4> #10 - Drinks</h4>
+                    <img
+                        src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/20191031-mojitos-three-ways-delish-ehg-2887-1584029660.jpg?crop=0.540xw:0.810xh;0.232xw,0.0745xh&resize=640:*">
+                    <h4>1.50</h4>
+                </div>
+        </main>
+    </div>
+    <script>
+        $('button').on('click', takeOrder);
+        function takeOrder() {
+            var total = 0;
+            var orderNumber = prompt('What combo would you like to order? Type the number below');
+            if (orderNumber === "1") {
+                total += 6.99; var tacos = prompt("What meat would you like in your tacos? Choose beef, chicken, or bean");
+                    if (tacos === "beef") {
+                        alert('Nice!')
+                    } else if (tacos === "chicken") {
+                        alert("Okay, great!")
+                    } else if (tacos === "bean") {
+                        alert('Not my favorite, but okay')
+                    } else {
+                        alert('Not an option. Choose something else.')
+                    };
+            } else if (orderNumber === '2') {
+                total += 9.99; var tacos = prompt("What meat would you like in your tacos? Choose beef, chicken, or bean");
+                    if (tacos === "beef") {
+                        alert('Nice!')
+                    } else if (tacos === "chicken") {
+                        alert("Okay, great!")
+                    } else if (tacos === "bean") {
+                        alert('Not my favorite, but okay')
+                    } else {
+                        alert('Not an option. Choose something else.')
+                    };
+            } else if (orderNumber === '3') {
+                total += 5.89;
+            } else if (orderNumber === '4') {
+                total += 2.50;
+            } else if (orderNumber === '5') {
+                total += 7.99;
+            } else if (orderNumber === '6') {
+                total += 3.50;
+            } else if (orderNumber === '7'){
+                total += 7.50;
+            } else if (orderNumber === '8') {
+                total += 2.50;
+            } else if (orderNumber === '9') {
+                total += 9.50;
+            } else if (orderNumber === '10') {
+                total += 1.50; var type = alert("What drink would you like? We have Coke, Sprite, Dr. Pepper, and Sweet Tea. Let us know when you come pick up your order.") 
+            } else {
+                alert('Please enter a number from the menu item according to your choice.')
+            };
+            var anythingElse = prompt("Would you like anything else? Please type yes or no.");
+            if (anythingElse === "no") {
+                alert('Thank you for your order. Your total is ' + total + '.');
+            } else if (anythingElse === "yes") {
+                var wantMore = prompt("What else would you like? Please enter combo numbers one at a time.");
+                if (orderNumber === "1") {
+                    total += 6.99; var tacos = prompt("What meat would you like in your tacos? Choose beef, chicken, or bean");
+                    if (tacos === "beef") {
+                        alert('Nice!')
+                    } else if (tacos === "chicken") {
+                        alert("Okay, great!")
+                    } else if (tacos === "bean") {
+                        alert('Not my favorite, but okay')
+                    } else {
+                        alert('Not an option. Choose something else.')
+                    }; 
+                } else if (orderNumber === '2') {
+                    total += 9.99; var tacos = prompt("What meat would you like in your tacos? Choose beef, chicken, or bean");
+                    if (tacos === "beef") {
+                        alert('Nice!')
+                    } else if (tacos === "chicken") {
+                        alert("Okay, great!")
+                    } else if (tacos === "bean") {
+                        alert('Not my favorite, but okay')
+                    } else {
+                        alert('Not an option. Choose something else.')
+                    };
+                } else if (orderNumber === '3') {
+                    total += 5.89;
+                } else if (orderNumber === '4') {
+                    total += 2.50;
+                } else if (orderNumber === '5') {
+                    total += 7.99;
+                } else if (orderNumber === '6') {
+                    total += 3.50;
+                } else if (orderNumber === '7') {
+                    total += 7.50;
+                } else if (orderNumber === '8') {
+                    total += 2.50;
+                } else if (orderNumber === '9') {
+                    total += 9.50;
+                } else if (orderNumber === '10') {
+                    total += 1.50;var type = alert("What drink would you like? We have Coke, Sprite, Dr. Pepper, and Sweet Tea. Let us know when you come pick up your order.") 
+                } else {
+                    alert('Please enter a number from the menu item according to your choice.')
+                }
+                var anything = prompt("Would you like anything else. Please type yes or no."); 
+                if (anything === "no"){
+                    alert("Thank you for your order. We appreciate your time.Your total is " + total + ". Please pay at the shop.")
+                } else if (anything === "yes") {
+                    var anything2 = prompt("What else would you like? Please enter combo numbers one at a time.");
+
+                    if (orderNumber === "1") {
+                    total += 6.99; var tacos = prompt("What meat would you like in your tacos? Choose beef, chicken, or bean");
+                    if (tacos === "beef") {
+                        alert('Nice!')
+                    } else if (tacos === "chicken") {
+                        alert("Okay, great!")
+                    } else if (tacos === "bean") {
+                        alert('Not my favorite, but okay')
+                    } else {
+                        alert('Not an option. Choose something else.')
+                    }; 
+                } else if (orderNumber === '2') {
+                    total += 9.99; var tacos = prompt("What meat would you like in your tacos? Choose beef, chicken, or bean");
+                    if (tacos === "beef") {
+                        alert('Nice!')
+                    } else if (tacos === "chicken") {
+                        alert("Okay, great!")
+                    } else if (tacos === "bean") {
+                        alert('Not my favorite, but okay')
+                    } else {
+                        alert('Not an option. Choose something else.')
+                    }; 
+                } else if (orderNumber === '3') {
+                    total += 5.89;
+                } else if (orderNumber === '4') {
+                    total += 2.50;
+                } else if (orderNumber === '5') {
+                    total += 7.99;
+                } else if (orderNumber === '6') {
+                    total += 3.50;
+                } else if (orderNumber === '7') {
+                    total += 7.50; 
+                } else if (orderNumber === '8') {
+                    total += 2.50;
+                } else if (orderNumber === '9') {
+                    total += 9.50;
+                } else if (orderNumber === '10') {
+                    total += 1.50;var type = alert("What drink would you like? We have Coke, Sprite, Dr. Pepper, and Sweet Tea. Let us know when you come pick up your order.") 
+                } else {
+                    alert('Please enter a number from the menu item according to your choice.')
+                }
+                } 
+                alert("Thank you for your order. We appreciate you! Your total is " + total + ". Please pay at the shop.");
+            }
+        };
+    </script>
+</body>
+
+</html>
