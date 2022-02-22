@@ -3,7 +3,6 @@
 
 <!--NOT VISIBLE TO THE USER-->
 <head>
-
     <meta charset="UTF-8">
     <title>Catsagram</title>
     <link rel="icon" type="image/png" href="favicon.ico">
@@ -16,18 +15,25 @@
         }
         img {
           width: 300px;  
+          border-radius: 30px;
+          border-style: outset;
         }
         .caption {
             margin-bottom: 70px;
+            color: white;
+            border-style: groove;
+            font-size:medium;
+            font-family:Arial, Helvetica, sans-serif;
+            border-radius: 20%;
+            border-color: pink;
         }
         .pic-container {
         display: flex;
         flex-direction: column;
         align-items: center;
-        background-color: pink;
-        background-image: images/1076309.jpg;
-    }
-      
+        background-image: url("https://wallpaperaccess.com/full/1745055.jpg");
+        background-size:cover;
+        }
     </style>
 </head>
 
@@ -44,7 +50,7 @@
         <div id="likeCount1"></div>
    
         <button id="likeBtn">Like</button> 
-        <p class="caption">I'm purrfect!</p>
+        <p class="caption"> I'm purrfect!</p>
 
          <!--Cat Photo 2-->
          <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/cute-cat-photos-1593441022.jpg?crop=0.669xw:1.00xh;0.166xw,0&resize=640:*">
@@ -76,7 +82,5 @@
 </div>
 </body>
 
-
 </body>
-
 </html>
