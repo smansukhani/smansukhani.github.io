@@ -33,53 +33,127 @@
         align-items: center;
         background-image: url("https://wallpaperaccess.com/full/1745055.jpg");
         background-size:cover;
+        width:fit-content;
+        margin-left:510px;
+        margin-top: 200px;
         color:white;
+        }
+        #profile_pic {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            float: left;
+            margin-left: 0px 0px 0px 30px;
+            text-align:left;
+            margin-top: 30px;
+            margin-left:400px;
+        }
+        #name {
+            position:absolute;
+            top: 120px;
+            left: 550px;
+            width: 775px;
+            height: 605px;
+            font-weight: bold;
+            font-size:large;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        #bio {
+            position: absolute;
+            top: 145px;
+            left: 550px;
+            width: 775px;
+            height: 605px;
+            font-size:medium;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        #followers {
+            position: absolute;
+            top: 75px;
+            left: 700px;
+            width: 775px;
+            height: 605px;
+            font-size: large;
+            font-weight: bold;
+            color: blue;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        #catname {
+            position:absolute;
+            top: 0px;
+            left: 55px;
+            width: 545px;
+            height: 225px;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size:xx-large;
+            color:pink;
+      }
+        #catcaption {
+            position:absolute;
+            top: 20px;
+            left: 20px;
+            width: 545px;
+            height: 225px;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size:x-large;
+        }
+        #username {
+            position: absolute;
+            top:70px;
+            left: 550px;
+            width: 775px;
+            height: 605px;
+            font-size:x-large;
+            font-weight:bolder;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         }
     </style>
 </head>
 
 <!--VISIBLE TO THE USER-->
 <body>
-
-    <h1 class="brand-font">Catstagram</h1>
-    <h5 class="brand-font">Sharing the World's Cats</h5>
+ ' '
+    <h1 class="brand-font" id="catname">Catstagram</h1>
+    <h5 class="brand-font" id="catcaption">Sharing the World's Cats</h5>
+    <div id="name"></div>
+    <div id="name_last"></div>
+    <div id="followers"></div>
+    <img id="profile_pic">
+    <div id="bio"></div>
+    <div id="username"></div>
 
     <!-- PICTURE CONTAINER  --> 
     <div class="pic-container">
         <!--Cat Photo 1-->
          <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/best-boy-cat-names-1606242656.jpg">
-        <div id="likeCount1"></div>
-   
-        <button onClick="likePhoto()">Like</button> 
+        <div id="likeCount0"></div>
+        <button id="likeBtn0"onClick="likePhoto(0)">Like</button>
         <p class="caption"> I'm purrfect!</p>
 
          <!--Cat Photo 2-->
          <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/cute-cat-photos-1593441022.jpg?crop=0.669xw:1.00xh;0.166xw,0&resize=640:*">
-         <div id="likeCount2"></div>
-   
-        <button id="button2">Like</button> 
+         <div id="likeCount1"></div>
+         <button id="likeBtn1"onClick='likePhoto(1)'>Like</button>
         <p class="caption">Sometimes,you just have to paws and relax.</p>
 
          <!--Cat Photo 3-->
          <img src="https://media.4-paws.org/a/5/3/7/a537f08d227326121b80790ba54036498668c9c8/VIER%20PFOTEN_2016-07-08_011-4993x3455-1920x1329.jpg">
-         <div id="likeCount3"></div>
-   
-         <button id="likeBtn">Like</button> 
+         <div id="likeCount2"></div>
+         <button id="likeBtn2"onClick='likePhoto(2)'>Like</button> 
         <p class="caption">I've got a funny feline about this...</p>
    
        <!--Cat Photo 4-->
       <img src="https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
-      <div id="likeCount4"></div>
-
-      <button id="likeBtn">Like</button>
+      <div id="likeCount3"></div>
+      <button id="likeBtn3"onClick='likePhoto(3)'>Like</button>
       <p class="caption">You've got to be kitten me right meow!</p>
 
       <!--Cat Photo 5-->
       <img src="https://media.istockphoto.com/photos/portrait-of-hipster-white-cat-wearing-sunglasses-and-shirtanimal-picture-id1071075930?k=20&m=1071075930&s=612x612&w=0&h=5POtl_eOv9sdMjsBqOE_8AiIPyaYfI4GqvJOFW7LIq8=">
-      <div id="likeCount5"></div>
-
-        <button id="likeBtn">Like</button>
-         <p class="caption">Catitude is everything!</p>
+      <div id="likeCount4"></div>
+     <button id="likeBtn4"onClick='likePhoto(4)'>Like</button>
+    <p class="caption">Catitude is everything!</p>
 </div>
 </body>
 
