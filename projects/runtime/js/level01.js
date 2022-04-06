@@ -24,6 +24,13 @@ var level01 = function (window) {
                 { 'type': 'obstacle', 'x': 1050, 'y': 300},
             ]
         };
+        for(var i = 0; i < levelData.gameItems.length; i++) {
+           var eachElement = levelData.gameItems[i];
+           createSawBlade(200,groundY);
+           createEnemy(400,groundY - 20);
+           createReward(1600,groundY - 50);
+           createObstacle(1050, 300);
+      }
 
     
         window.levelData = levelData;
