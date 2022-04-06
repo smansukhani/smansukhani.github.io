@@ -16,15 +16,46 @@ var level01 = function (window) {
             "number": 1, 
             "speed": -3,
             "gameItems": [
-                { "type": "sawblade", "x": 200, "y": groundY },
-                { "type": "sawblade", "x": 900, "y": groundY },
-                { "type": "sawblade", "x": 700, "y": groundY },
-                { 'type': 'enemy', 'x': 400, 'y': groundY - 20},
-                { 'type': 'reward', 'x': 1600, 'y': groundY - 50},
-                { 'type': 'obstacle', 'x': 1050, 'y': 300},
+                { "type": "sawblade", "x": 200, "y": 300 },
+                { "type": "sawblade", "x": 900, "y": 210 },
+                { "type": "sawblade", "x": 700, "y": 265 },
+                { "type": "bat", "x": 1200,"y": 210 }, 
+                { 'type': 'enemy', 'x': 400, 'y': groundY - 20 },
+                { 'type': 'reward', 'x': 1600, 'y': groundY - 50 },
+                { 'type': 'bat', 'x': 1050, 'y': 300 },
+                { 'type': 'snake', 'x': 1350, 'y':275 },
+                { 'type': 'snake', 'x': 1500, 'y': 240 },
+                { 'type': 'enemy', 'x': 800, 'y': groundY - 100 },
+                { 'type': 'enemy', 'x': 1600, 'y': groundY - 60 },
+                { 'type': 'enemy', 'x': 1200, 'y': groundY - 5 }, 
+                { 'type': 'enemy', 'x': 2000, 'y': groundY - 150 },
+                { 'type': 'enemy', 'x': 2400, 'y': groundY - 30 },
+                { 'type': 'enemy', 'x': 2600, 'y': groundY - 60 },
             ]
         };
+        for (var i = 0; i < levelData.gameItems.length; i++) { 
+            if (levelData.gameItems[i].type === 'enemy') {
+                createEnemy(levelData.gameItems[i].x, levelData.gameItems[i].y)
+            }
 
+            else if (levelData.gameItems[i].type === 'reward') {
+                createReward(levelData.gameItems[i].x, levelData.gameItems[i].y)
+            }
+
+           else if (levelData.gameItems[i].type === 'bat') {
+                createBat(levelData.gameItems[i].x, levelData.gameItems[i].y)
+            }
+
+           else if (levelData.gameItems[i].type === 'sawblade') {
+                createSawBlade(levelData.gameItems[i].x, levelData.gameItems[i].y)
+            }
+
+           else if (levelData.gameItems[i].type === 'snake') {
+                createSnake(levelData.gameItems[i].x, levelData.gameItems[i].y)
+            }
+
+
+        }
     
         window.levelData = levelData;
         // set this to true or false depending on if you want to see hitzones
@@ -102,11 +133,11 @@ var level01 = function (window) {
             game.addGameItem(enemy);
         }
         createEnemy(400,groundY-20);
-        createEnemy(800,groundY-100);
+        createEnemy(800,groundY - 100);
         createEnemy(1200,groundY-50);
         createEnemy(1600,groundY-60);
         createEnemy(2000,groundY-150);
-        createEnemy(2400,groundY-30);
+        createEnemy(2400, groundY - 30);
         createEnemy(2600,groundY-60);
 
 
