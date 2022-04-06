@@ -25,11 +25,11 @@ var level01 = function (window) {
                 { 'type': 'bat', 'x': 1050, 'y': 300 },
                 { 'type': 'snake', 'x': 1350, 'y':275 },
                 { 'type': 'snake', 'x': 1500, 'y': 240 },
-                { 'type': 'enemy', 'x': 800, 'y': groundY - 100 },
-                { 'type': 'enemy', 'x': 1600, 'y': groundY - 60 },
-                { 'type': 'enemy', 'x': 1200, 'y': groundY - 5 }, 
-                { 'type': 'enemy', 'x': 2000, 'y': groundY - 150 },
-                { 'type': 'enemy', 'x': 2400, 'y': groundY - 30 },
+                { 'type': 'enemy', 'x': 800, 'y': groundY - 50 },
+                { 'type': 'enemy', 'x': 1600, 'y': groundY - 30 },
+                { 'type': 'enemy', 'x': 1200, 'y': groundY - 20 }, 
+                { 'type': 'enemy', 'x': 2000, 'y': groundY - 50 },
+                { 'type': 'enemy', 'x': 2400, 'y': groundY - 70 },
                 { 'type': 'enemy', 'x': 2600, 'y': groundY - 60 },
             ]
         };
@@ -76,10 +76,6 @@ var level01 = function (window) {
             obstacleImage.x = -25;
             obstacleImage.y= -25;
         }
-        createSawBlade(200,300);
-        createSawBlade(900,210);
-        createSawBlade(700,265);
-
         function createBat(x,y) {
             var hitZoneSize = 25;
             var damageFromObstacle = 10;
@@ -92,9 +88,6 @@ var level01 = function (window) {
             obstacleImage2.x = -50;
             obstacleImage2.y= -50;
         }
-        createBat(1050, 300);
-        createBat(1200, 210);
-
         function createSnake(x,y) {
             var hitZoneSize = 25;
             var damageFromObstacle = 10;
@@ -107,9 +100,6 @@ var level01 = function (window) {
             obstacleImage3.x = -30;
             obstacleImage3.y = -30;
         }
-
-        createSnake(1350,275);
-        createSnake(1500,240);
 
         function createEnemy(x,y) {
             var enemy = game.createGameItem('enemy',25);
@@ -132,48 +122,39 @@ var level01 = function (window) {
             };
             game.addGameItem(enemy);
         }
-        createEnemy(400,groundY-20);
-        createEnemy(800,groundY - 100);
-        createEnemy(1200,groundY-50);
-        createEnemy(1600,groundY-60);
-        createEnemy(2000,groundY-150);
-        createEnemy(2400, groundY - 30);
-        createEnemy(2600,groundY-60);
-
-
-function createReward(x, y) {
-    function reward(x, y){
-    var reward = game.createGameItem('reward',25);
-    var lollipop = draw.bitmap('img/lollipopfinal.png');
-    lollipop.x = -50;
-    lollipop.y = -50;
-    reward.addChild(lollipop);
-
-   lollipop.scaleX = 0.2;
-   lollipop.scaleY = 0.2;
-
-    reward.x = x;
-    reward.y = y;
-
-    game.addGameItem(reward);
-    reward.velocityX = -2;
-
-    reward.onPlayerCollision = function(){
-    console.log('The lifeItem has touched Halle');
-    game.changeIntegrity(+25);
-    reward.fadeOut();
-
-    };
-        reward.onProjectileCollision = function (){
-            console.log('Halle has touched the lifeItem');
-            game.increaseScore(100);
-           reward.fadeOut();
-    }
-}
-reward(1600, groundY -50);
-
-}
-createReward();
+        function createReward(x, y) {
+            function reward(x, y){
+            var reward = game.createGameItem('reward',25);
+            var lollipop = draw.bitmap('img/lollipopfinal.png');
+            lollipop.x = -50;
+            lollipop.y = -50;
+            reward.addChild(lollipop);
+        
+           lollipop.scaleX = 0.2;
+           lollipop.scaleY = 0.2;
+        
+            reward.x = x;
+            reward.y = y;
+        
+            game.addGameItem(reward);
+            reward.velocityX = -2;
+        
+            reward.onPlayerCollision = function(){
+            console.log('The lifeItem has touched Halle');
+            game.changeIntegrity(+25);
+            reward.fadeOut();
+        
+            };
+                reward.onProjectileCollision = function (){
+                    console.log('Halle has touched the lifeItem');
+                    game.increaseScore(100);
+                   reward.fadeOut();
+            }
+        }
+        reward(1600, groundY -50);
+        
+        }
+        createReward();
                     // DO NOT EDIT CODE BELOW HERE
     }
     
