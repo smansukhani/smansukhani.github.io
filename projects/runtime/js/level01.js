@@ -17,21 +17,27 @@ var level01 = function (window) {
             "speed": -3,
             "gameItems": [
                 { "type": "sawblade", "x": 200, "y": 300 },
+                { 'type': 'sawblade', 'x': 500, 'y': 250 },
                 { "type": "sawblade", "x": 900, "y": 210 },
                 { "type": "sawblade", "x": 700, "y": 265 },
-                { "type": "bat", "x": 1200,"y": 210 }, 
-                { 'type': 'enemy', 'x': 400, 'y': groundY - 20 },
+                { 'type': 'sawblade', 'x': 1000, 'y': 300 },
+                { 'type': 'bat', 'x': 1800, 'y': 250 },
+                { 'type': 'enemy', 'x': 400, 'y': groundY - 30 },
                 { 'type': 'reward', 'x': 1600, 'y': groundY - 50 },
                 { 'type': 'bat', 'x': 1050, 'y': 300 },
-                { 'type': 'snake', 'x': 1350, 'y':275 },
                 { 'type': 'snake', 'x': 1500, 'y': 240 },
+                { 'type': 'snake', 'x': 1300, 'y': 250 },
                 { 'type': 'enemy', 'x': 800, 'y': groundY - 50 },
-                { 'type': 'enemy', 'x': 1600, 'y': groundY - 30 },
-                { 'type': 'enemy', 'x': 1200, 'y': groundY - 20 }, 
+                { 'type': 'enemy', 'x': 1600, 'y': groundY - 50 },
+                { 'type': 'enemy', 'x': 1200, 'y': groundY - 50 }, 
                 { 'type': 'enemy', 'x': 2000, 'y': groundY - 50 },
-                { 'type': 'enemy', 'x': 2400, 'y': groundY - 70 },
+                { 'type': 'enemy', 'x': 2400, 'y': groundY - 60 },
                 { 'type': 'enemy', 'x': 2600, 'y': groundY - 60 },
-            ]
+                { 'type': 'enemy', 'x': 2800, 'y': groundY - 70 },
+                { 'type': 'enemy', 'x': 3000, 'y': groundY - 60 }, 
+                { 'type': 'enemy', 'x': 3200, 'y': groundY - 50 },
+                { 'type': 'enemy', 'x': 3400, 'y': groundY - 70 }, 
+             ]
         };
         for (var i = 0; i < levelData.gameItems.length; i++) { 
             if (levelData.gameItems[i].type === 'enemy') {
@@ -85,8 +91,8 @@ var level01 = function (window) {
             game.addGameItem(batHitZone);
             var obstacleImage2 = draw.bitmap('img/bat2 (1)(1).png');
             batHitZone.addChild(obstacleImage2);
-            obstacleImage2.x = -50;
-            obstacleImage2.y= -50;
+            obstacleImage2.x = -25;
+            obstacleImage2.y= -25;
         }
         function createSnake(x,y) {
             var hitZoneSize = 25;
@@ -97,8 +103,8 @@ var level01 = function (window) {
             game.addGameItem(snakeHitZone);
             var obstacleImage3 = draw.bitmap('img/snakefinal (1).png');
             snakeHitZone.addChild(obstacleImage3);
-            obstacleImage3.x = -30;
-            obstacleImage3.y = -30;
+            obstacleImage3.x = -25;
+            obstacleImage3.y = -25;
         }
 
         function createEnemy(x,y) {
@@ -109,16 +115,16 @@ var level01 = function (window) {
             enemy.addChild(zombie);
             enemy.x = x;
             enemy.y = y;
-            enemy.velocityX = -3;
-            enemy.rotationVelocity = 10;
+            enemy.velocityX = -5;
+            enemy.rotationVelocity = 0.01;
             enemy.onPlayerCollision = function() {
                 console.log('The enemy has hit Halle');
-                game.changeIntegrity(-10);
+                game.changeIntegrity(-50);
             };
             enemy.onProjectileCollision = function() {
                 console.log('Halle has hit the enemy');
-               game.increaseScore(100);
-               enemy.fadeOut();
+                game.increaseScore(1000);
+                enemy.flyTo(1000, 1000);
             };
             game.addGameItem(enemy);
         }
@@ -137,7 +143,7 @@ var level01 = function (window) {
             reward.y = y;
         
             game.addGameItem(reward);
-            reward.velocityX = -2;
+            reward.velocityX = -3;
         
             reward.onPlayerCollision = function(){
             console.log('The lifeItem has touched Halle');
@@ -147,7 +153,7 @@ var level01 = function (window) {
             };
                 reward.onProjectileCollision = function (){
                     console.log('Halle has touched the lifeItem');
-                    game.increaseScore(100);
+                    game.increaseScore(1000);
                    reward.fadeOut();
             }
         }
