@@ -1,0 +1,98 @@
+
+body {
+    background-image: url('https://cdna.artstation.com/p/assets/images/images/027/532/576/large/berrechid-khalid-pic3.jpg?1591803851');
+    background-size:cover;
+    color:yellow;
+    
+}
+.main-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 255, 0.3);
+}
+/* Flex direction: column here allows us
+to add multiple auto-clicker divs, and they'll appear
+as a vertical list */
+.autoclicker-box {
+    flex-grow: 2;
+    display:flex;
+    flex-direction:column;
+}
+
+html {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+.autoclicker-box > div {
+    margin: 10px;
+    padding: 15px;
+    font-size: 16px;
+    display: flex;
+    flex-direction: row;
+    align-content: space-around;
+}
+
+.autoclicker > p {
+    padding-right: 40px;
+}
+
+.upgrade-box {
+    flex-grow: 2;
+}
+
+.clicker-box {
+    flex-grow: 4;
+}
+
+.clicker-box > img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 500px;
+    border-bottom-left-radius: 800px;
+    border-bottom-right-radius: 800px;
+    border-top-left-radius: 2000px;
+    border-top-right-radius: 2000px;
+}
+
+.clicker-box > p {
+    text-align: center;
+}
+
+#ram-amount {
+    font-weight: bold;
+}
+
+.main-box > div {
+    background-color:rgba(0, 255, 119, 0.468);
+    margin: 20px;
+    padding: 30px;
+    font-size: 20px;
+    border-radius: 20px;
+}
+
+div {
+    border: 2px solid black ;
+    text-align:inherit;
+}
+#clicker1 {
+    background-color: rgba(0, 128, 128, 0.506);
+}
+#upgradeslol {
+    background-color:rgba(6, 255, 172, 0.63);
+    
+}
+#texth {
+    color:blue;
+    text-shadow: 2px 2px red;
+}
+.button {
+    background-color: black;
+    border: 2px rgb(75, 16, 214) ridge;
+    padding:15px;
+    display:block;
+    font-size: 16px;
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    
+}

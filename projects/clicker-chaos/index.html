@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="index.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+
+    <body>
+        <h1 id="texth">SMURF Clicker</h1>
+        <!-- <div class="top-box"> -->
+            <div class="main-box">
+                 <div class="upgrade-box" id="upgradeslol">
+                     <h2 id="textu">Upgrades</h2>
+                      <div class="upgrade" id="upgrade1">
+                         <p>Clothing</p>
+                         <p id="clothing-count">Owned: 0</p>
+                         <p id="clothing-cost">Cost:200</p>
+                         <button class="button" id="purchase-clothing">Purchase Clothing!</button>
+                </div>
+            </div>
+                <div class = 'clicker-box'>
+                    <img id="clicker-image" src="https://m.media-amazon.com/images/I/513oahn-DAL._AC_SL1000_.jpg"width='300' height="200">
+                    <p id='smurf-amount'>Smurfs: 0 smurf buddies</p>
+                    <p id="smurfPerSecond">Smurfs per second: 0 smurf buddies</p>
+                </div>
+                <div class="auto-clicker box" id="clicker1">
+                    <h2 id="textc">Autoclickers</h2>
+                    <div class="autoclicker" id="autoclicker1" title="One byte of RAM per second">
+                        <p>Papa Smurf's Secret Stash</p>
+                        <p id="secrets-count">Owned: 0</p>
+                        <p id="secrets-cost">Cost: 75</p>
+                        <button id="purchase-secrets" class="button">Buy Secrets!</button>
+                    </div>
+                </div>  
+                </div>
+            </div>
+            <!-- <div class="credits">
+
+            </div> -->
+        <!-- </div> -->
+        <script>
+            // Variables
+            var smurf = 0;
+            var smurfPerSecond= 0;
+            var Secrets = {
+                   rps: 0.5, // each net helps us catch one butterfly per second
+                  numberOwned: 0, // we don't have any nets at the beginning of the game
+                  basePrice: 75, // the first one costs 50
+           };
+           var clothing = {
+                amp: 1.25,
+                numberOwned: 0,
+                basePrice: 200,
+            }
+
+            // Core Functionality
+            $("#clicker-image").on("click", downloadSmurfs);
+            setInterval(addAutoRAM, 1000);
+            // Event/Click Listeners
+            $("#purchase-secrets").on('click', purchaseSecrets);
+            $("#purchase-clothing").on('click', purchaseClothing);
+
+            // Functions
+            function downloadSmurfs() {
+                 smurf++;
+                $("#smurf-amount").text("Smurfs: " + smurf + " smurf buddies");
+            }
+
+            function purchaseSecrets() {
+    var cost = Math.ceil(Secrets.basePrice * Math.pow(1.1, Secrets.numberOwned));
+         if (smurf >= cost) {
+                smurf = smurf - cost;
+                 smurfPerSecond = smurfPerSecond += Secrets.rps;
+                Secrets.numberOwned++;
+        $("#secrets-count").text("Owned: " + Secrets.numberOwned);
+        $("#secrets-cost").text("Cost: " + Secrets.basePrice); 
+        $('#smurfPerSecond').text("Smurfs per second: " + smurfPerSecond + " smurf buddies");
+                Secrets.numberOwned = Secrets.numberOwned + 1;
+
+        var newCost = Math.ceil(Secrets.basePrice * Math.pow(1.1, Secrets.numberOwned));
+        $('#secrets-cost').text("Cost: " + newCost);
+    }
+}
+          function purchaseClothing() {
+ var cost = Math.ceil(clothing.basePrice * Math.pow(1.1, clothing.numberOwned));
+                if (smurf >= cost) {
+                    smurf = smurf - cost;
+                    smurf = smurf+=75;
+                    clothing.numberOwned++;
+    
+                smurfPerSecond = smurfPerSecond * 1.25;
+                $('#smurfPerSecond').text("Smurfs per second: " + smurfPerSecond + " smurf buddies");
+                clothing.numberOwned = clothing.numberOwned + 1;
+                $('#clothing-count').text("Owned: " + clothing.numberOwned);
+                var newCost = Math.ceil(clothing.basePrice * Math.pow(1.1, clothing.numberOwned));
+                $('#clothing-cost').text("Cost: " + newCost);
+         }
+    }
+         function addAutoRAM() {
+    /*
+        Write a line of code that increases the ram variable by the value stored in the ramPerSecond variable
+        
+        If you chose a number different than 1000 above for your setInterval timer, you'll have to divide the ramPerSecond value before adding it to the ram.
+        For example, if you chose 250, you'll update the ram variable by adding one fourth of the ramPerSecond value.
+    */
+    smurf = smurf + smurfPerSecond;
+    // update the text that displays the ram available
+    $("#smurf-amount").text("Smurfs: " + Math.floor(smurf) + " smurf buddies"); 
+}
+        
+            /* All code above here */
+          </script>
+    </body>
+</html>
