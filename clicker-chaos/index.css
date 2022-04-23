@@ -1,15 +1,28 @@
 
 body {
-    background-image: url('https://cdna.artstation.com/p/assets/images/images/027/532/576/large/berrechid-khalid-pic3.jpg?1591803851');
+    background-image: url('https://flxt.tmsimg.com/assets/p20500048_b_v13_aa.jpg');
     background-size:cover;
+    background-position-y:top;
     color:yellow;
     
 }
 .main-box {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
     background-color: rgba(0, 0, 255, 0.3);
+    margin: 10px;
+    
+}
+button {
+    background-color: black;
+    border: 2px rgb(75, 16, 214) ridge;
+    padding:15px;
+    display:flex;
+    font-size: 16px;
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    
 }
 /* Flex direction: column here allows us
 to add multiple auto-clicker divs, and they'll appear
@@ -19,7 +32,6 @@ as a vertical list */
     display:flex;
     flex-direction:column;
 }
-
 html {
     font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -27,8 +39,8 @@ html {
     margin: 10px;
     padding: 15px;
     font-size: 16px;
-    display: flex;
-    flex-direction: row;
+    display:flex;
+    flex-direction:row;
     align-content: space-around;
 }
 
@@ -85,14 +97,6 @@ div {
 #texth {
     color:blue;
     text-shadow: 2px 2px red;
-}
-.button {
-    background-color: black;
-    border: 2px rgb(75, 16, 214) ridge;
-    padding:15px;
-    display:block;
-    font-size: 16px;
-    font-family: 'Courier New', Courier, monospace;
-    color: white;
-    
+    border-style: double;
+    border:5000px;
 }

@@ -16,22 +16,71 @@
                          <p id="clothing-count">Owned: 0</p>
                          <p id="clothing-cost">Cost:200</p>
                          <button class="button" id="purchase-clothing">Purchase Clothing!</button>
-                </div>
+                      </div>
+                      <div class="upgrade" id="upgrade2">
+                        <p>Shelter</p>
+                        <p id="shelter-count">Owned: 0</p>
+                        <p id="shelter-cost">Cost: 500</p>
+                        <button class="button" id="purchase-shelter">Upgrade your Shelter!</button>
+                      </div>
+                      <div class="upgrade" id="upgrade3">
+                        <p>Food</p>
+                        <p id="food-count">Owned: 0</p>
+                        <p id="food-cost">Cost: 300</p>
+                        <button class="button" id="purchase-food">Buy Food & Desserts!</button>
+                      </div>
+                      <div class="upgrade" id="upgrade4">
+                          <p>Transportation</p>
+                          <p id="car-count">Owned: 0</p>
+                          <p id="car-cost">Cost: 425</p>
+                          <button class="button" id="purchase-car">Buy/Upgrade your Vehicle!</button>
+                      </div>
+                      <div class="upgrade" id="upgrade5">
+                          <p>SURPRISE!!!!</p>
+                          <p id="surprise-count">Owned: 0</p>
+                          <p id="surprise-cost">Cost: 10000</p>
+                          <button class="button" id="purchase-surprise">Buy a Surprise Item!</button>
+                      </div>
             </div>
                 <div class = 'clicker-box'>
                     <img id="clicker-image" src="https://m.media-amazon.com/images/I/513oahn-DAL._AC_SL1000_.jpg"width='300' height="200">
                     <p id='smurf-amount'>Smurfs: 0 smurf buddies</p>
                     <p id="smurfPerSecond">Smurfs per second: 0 smurf buddies</p>
                 </div>
-                <div class="auto-clicker box" id="clicker1">
-                    <h2 id="textc">Autoclickers</h2>
-                    <div class="autoclicker" id="autoclicker1" title="One byte of RAM per second">
+
+                <div class="autoclicker-box" id="clicker1">
+                   <h2 id="textc">Autoclickers</h2>
+                    <div class="autoclicker" id="autoclicker1">
                         <p>Papa Smurf's Secret Stash</p>
                         <p id="secrets-count">Owned: 0</p>
                         <p id="secrets-cost">Cost: 75</p>
                         <button id="purchase-secrets" class="button">Buy Secrets!</button>
                     </div>
-                </div>  
+                    <div class="autoclicker" id="autoclicker2">
+                        <p>Gargamel's Magical Youth Potion</p>
+                        <p id="potion-count">Owned: 0</p>
+                        <p id="potion-cost">Cost: 250</p>
+                        <button id="purchase-potions" class="button">Buy Gargamel's Potion!</button>
+                    </div>
+                    <div class="autoclicker" id="autoclicker3">
+                    <p>Smurfette's Golden Charm</p>
+                    <p id="charm-count">Owned: 0</p>
+                    <p id="charm-cost">Cost: 425</p>
+                    <button id="purchase-charms" class="button">Buy Smurfette's Lucky Charm!</button>
+                    </div>  
+                    <div class="autoclicker" id="autoclicker4">
+                     <p>A Human Friend</p>
+                     <p id="friend-count">Owned: 0</p>
+                     <p id="friend-cost">Cost: 800</p>
+                     <button id="purchase-friends" class="button">Give Gratuity!</button>
+                    </div>
+                    <div class="autoclicker" id="autoclicker5">
+                     <p>The Magic Portal</p>
+                     <p id="portal-count">Owned: 0</p>
+                     <p id="portal-cost">Cost:10000</p>
+                     <button id="purchase-portal" class="button">Buy your Ticket back Home!</button>
+                    </div>
+                </div>
                 </div>
             </div>
             <!-- <div class="credits">
@@ -52,6 +101,46 @@
                 numberOwned: 0,
                 basePrice: 200,
             }
+            var potion = {
+                rps: 1.5, 
+                numberOwned: 0,
+                basePrice: 250,
+            };
+            var charm = {
+                rps: 1.75,
+                numberOwned: 0,
+                basePrice: 425,
+            };
+            var human = {
+                rps: 2.50, 
+                numberOwned: 0,
+                basePrice: 800,
+            };
+            var portal = {
+                rps: 10, 
+                numberOwned: 0,
+                basePrice: 10000,
+            };
+            var shelter = {
+                amp: 1.50,
+                numberOwned: 0,
+                basePrice: 500,
+            };
+            var food = {
+                amp: 1.75,
+                numberOwned: 0,
+                basePrice: 300,
+            };
+            var car = {
+                amp: 2,
+                numberOwned: 0,
+                basePrice: 425,
+            };
+            var surprise = {
+                amp: 4.75, 
+                numberOwned: 0,
+                basePrice: 10000,
+            }
 
             // Core Functionality
             $("#clicker-image").on("click", downloadSmurfs);
@@ -59,6 +148,16 @@
             // Event/Click Listeners
             $("#purchase-secrets").on('click', purchaseSecrets);
             $("#purchase-clothing").on('click', purchaseClothing);
+            $("#purchase-potions").on('click', purchasePotions);
+            $("#purchase-charms").on('click', purchaseCharms);
+            $("#purchase-friends").on('click', purchaseFriends);
+            $("#purchase-portal").on('click', purchasePortal);
+            $("#purchase-shelter").on('click', purchaseShelter);
+            $("#purchase-food").on('click', purchaseFood);
+            $("#purchase-car").on('click', purchaseCar);
+            $("#purchase-surprise").on('click', purchaseSurprise);
+
+
 
             // Functions
             function downloadSmurfs() {
@@ -72,6 +171,7 @@
                 smurf = smurf - cost;
                  smurfPerSecond = smurfPerSecond += Secrets.rps;
                 Secrets.numberOwned++;
+                prompt('Congrats! You have unlocked Papa Smurf and his secret candy stash! Click Ok to continue clicking!');
         $("#secrets-count").text("Owned: " + Secrets.numberOwned);
         $("#secrets-cost").text("Cost: " + Secrets.basePrice); 
         $('#smurfPerSecond').text("Smurfs per second: " + smurfPerSecond + " smurf buddies");
@@ -87,7 +187,7 @@
                     smurf = smurf - cost;
                     smurf = smurf+=75;
                     clothing.numberOwned++;
-    
+                prompt('Congrats! You have unlocked clothing for your smurf buddies!You have earned 2 pieces of clothing with 75 smurf buddies each!!!');
                 smurfPerSecond = smurfPerSecond * 1.25;
                 $('#smurfPerSecond').text("Smurfs per second: " + smurfPerSecond + " smurf buddies");
                 clothing.numberOwned = clothing.numberOwned + 1;
@@ -95,6 +195,127 @@
                 var newCost = Math.ceil(clothing.basePrice * Math.pow(1.1, clothing.numberOwned));
                 $('#clothing-cost').text("Cost: " + newCost);
          }
+    }
+        function purchasePotions() {
+var cost = Math.ceil(potion.basePrice * Math.pow(2, potion.numberOwned));
+            if (smurf >= cost) {
+                smurf = smurf - cost;
+                smurfPerSecond = smurfPerSecond += potion.rps;
+            prompt('Oooh, you have unlocked Gargamel and his magical youth potion to magically create young smurf buddies for you! Keep clicking!');
+        $("#potion-count").text("Owned: " + potion.numberOwned);
+        $("#potion-cost").text("Cost: " + potion.basePrice); 
+        $('#smurfPerSecond').text("Smurfs per second: " + smurfPerSecond + " smurf buddies");
+                potion.numberOwned = potion.numberOwned + 1;
+               
+
+        var newCost = Math.ceil(potion.basePrice * Math.pow(1.1, potion.numberOwned));
+        $('#potion-cost').text("Cost: " + newCost);
+    }
+}
+    function purchaseCharms() {
+var cost = Math.ceil(charm.basePrice * Math.pow(3, charm.numberOwned));
+            if(smurf >= cost) {
+                smurf = smurf - cost;
+                smurfPerSecond = smurfPerSecond += charm.rps;
+            prompt('Smurfette has some golden locks, and I see you would like to purchase her secret, lucky charms! Congrats!!');
+        $('#charm-count').text('Owned: ' + charm.numberOwned);
+        $('#charm-cost').text('Cost: ' + charm.basePrice);
+        $('#smurfPerSecond').text("Smurfs per second: " + smurfPerSecond + " smurf buddies");
+                charm.numberOwned = charm.numberOwned + 1;
+
+        var newCost = Math.ceil(charm.basePrice * Math.pow(1.1, charm.numberOwned));
+        $('#charm-cost').text("Cost: " + newCost)
+            }
+    }
+    function purchaseFriends() {
+var cost = Math.ceil(human.basePrice * Math.pow(3, human.numberOwned));
+            if(smurf >= cost) {
+                smurf = smurf - cost;
+                smurfPerSecond = smurfPerSecond += charm.rps;
+            prompt('I see you have found human friends to help you take care of your village. Give them a tip/gift and they will give you their help as well!');
+             $('#friend-count').text('Owned: ' + human.numberOwned);
+             $('#friend-cost').text('Cost: ' + human.basePrice);
+             $('#smurfPerSecond').text("Smurfs per second: " + smurfPerSecond + " smurf buddies");
+                human.numberOwned = human.numberOwned + 1;
+
+             var newCost = Math.ceil(human.basePrice * Math.pow(1.1, human.numberOwned));
+              $('#friend-cost').text("Cost: " + newCost)
+            
+            }
+      } 
+        function purchasePortal() {
+     var cost = Math.ceil(portal.basePrice * Math.pow(3, portal.numberOwned));
+            if(smurf >= cost) {
+                smurf = smurf - cost;
+                smurfPerSecond = smurfPerSecond += charm.rps;
+            prompt('CONGRATULATIONS! You are about to buy your ticket back to the smurfs village via the Magic Portal! Have a safe journey back home, and take all your smurf buddies with you!');
+             $('#portal-count').text('Owned: ' + portal.numberOwned);
+             $('#portal-cost').text('Cost: ' + portal.basePrice);
+             $('#smurfPerSecond').text("Smurfs per second: " + smurfPerSecond + " smurf buddies");
+                portal.numberOwned = portal.numberOwned + 1;
+
+             var newCost = Math.ceil(portal.basePrice * Math.pow(1.1, portal.numberOwned));
+              $('#portal-cost').text("Cost: " + newCost)
+        }
+    }
+    function purchaseShelter() {
+ var cost = Math.ceil(shelter.basePrice * Math.pow(1.1, shelter.numberOwned));
+                if (smurf >= cost) {
+                    smurf = smurf - cost;
+                    smurf = smurf - Math.random() * 30;
+                    smurf = smurf + Math.random() * 1000;
+                prompt('Sometimes you win, Sometimes you lose. Take the risk and Fate will choose. Anyway, no undoing now. BUT I promise you can randomly gain smurf buddies as well!');
+                smurfPerSecond = smurfPerSecond * 1.25;
+                $('#smurfPerSecond').text("Smurfs per second: " + smurfPerSecond + " smurf buddies");
+                shelter.numberOwned = shelter.numberOwned + 1;
+                $('#shelter-count').text("Owned: " + shelter.numberOwned);
+                var newCost = Math.ceil(shelter.basePrice * Math.pow(1.1, shelter.numberOwned));
+                $('#shelter-cost').text("Cost: " + newCost);
+         }
+    }
+    function purchaseFood() {
+  var cost = Math.ceil(food.basePrice * Math.pow(1.1, food.numberOwned));
+                if (smurf >= cost) {
+                    smurf = smurf - cost;
+                    smurf = smurf+=100;
+                prompt('Food is good for the Soul!!!');
+                smurfPerSecond = smurfPerSecond * 1.25;
+                $('#smurfPerSecond').text("Smurfs per second: " + smurfPerSecond + " smurf buddies");
+                food.numberOwned = food.numberOwned + 1;
+                $('#food-count').text("Owned: " + food.numberOwned);
+                var newCost = Math.ceil(food.basePrice * Math.pow(1.1, food.numberOwned));
+                $('#food-cost').text("Cost: " + newCost);
+    }
+
+}
+        function purchaseCar() {
+    var cost = Math.ceil(car.basePrice * Math.pow(1.1, car.numberOwned));
+                if (smurf >= cost) {
+                    smurf = smurf - cost;
+                    smurf = smurf - 300;
+                prompt('Food is good for the Soul!!!');
+                smurfPerSecond = smurfPerSecond * 1.25;
+                $('#smurfPerSecond').text("Smurfs per second: " + smurfPerSecond + " smurf buddies");
+                car.numberOwned = car.numberOwned + 1;
+                $('#car-count').text("Owned: " + car.numberOwned);
+                var newCost = Math.ceil(food.basePrice * Math.pow(1.1, car.numberOwned));
+                $('#car-cost').text("Cost: " + newCost);
+        }
+     }
+     
+     function purchaseSurprise() {
+ var cost = Math.ceil(surprise.basePrice * Math.pow(1.1, surprise.numberOwned));
+                 if (smurf >= cost) {
+                    smurf = smurf - cost;
+                    smurf = smurf *0;
+                prompt('Buy a Surprise! Take the risk....You never know!!');
+                smurfPerSecond = smurfPerSecond * 1.25;
+                $('#smurfPerSecond').text("Smurfs per second: " + smurfPerSecond + " smurf buddies");
+                surprise.numberOwned = surprise.numberOwned + 1;
+                $('#surprise-count').text("Owned: " + surprise.numberOwned);
+                var newCost = Math.ceil(surprise.basePrice * Math.pow(1.1, surprise.numberOwned));
+                $('#surprise-cost').text("Cost: " + newCost);
+     }
     }
          function addAutoRAM() {
     /*
