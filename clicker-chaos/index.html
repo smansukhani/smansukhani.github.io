@@ -312,7 +312,7 @@ var cost = Math.ceil(human.basePrice * Math.pow(3, human.numberOwned));
                     smurf = smurf - cost;
                     smurf = smurf *0;
                 alert('Buy a Surprise! Take the risk....You never know!!');
-                smurfPerSecond = smurfPerSecond * 1.25;
+                smurfPerSecond = 0;
                 $('#smurfPerSecond').text("Smurfs per second: " + smurfPerSecond + " smurf buddies");
                 surprise.numberOwned = surprise.numberOwned + 1;
                 $('#surprise-count').text("Owned: " + surprise.numberOwned);
