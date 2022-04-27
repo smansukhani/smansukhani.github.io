@@ -170,12 +170,12 @@
          if (smurf >= cost) {
                 smurf = smurf - cost;
                  smurfPerSecond = smurfPerSecond += Secrets.rps;
-                Secrets.numberOwned++;
+                 Secrets.numberOwned++;
                 alert('Congrats! You have unlocked Papa Smurf and his secret candy stash! Click Ok to continue clicking!');
         $("#secrets-count").text("Owned: " + Secrets.numberOwned);
         $("#secrets-cost").text("Cost: " + Secrets.basePrice); 
         $('#smurfPerSecond').text("Smurfs per second: " + smurfPerSecond + " smurf buddies");
-                Secrets.numberOwned = Secrets.numberOwned + 1;
+            
 
         var newCost = Math.ceil(Secrets.basePrice * Math.pow(1.1, Secrets.numberOwned));
         $('#secrets-cost').text("Cost: " + newCost);
@@ -186,8 +186,7 @@
                 if (smurf >= cost) {
                     smurf = smurf - cost;
                     smurf = smurf+=75;
-                    clothing.numberOwned++;
-                alert('Congrats! You have unlocked clothing for your smurf buddies!You have earned 2 pieces of clothing with 75 smurf buddies each!!!');
+                alert('Congrats! You have unlocked clothing for your smurf buddies!You have earned 75 smurf buddies!!!');
                 smurfPerSecond = smurfPerSecond * 1.25;
                 $('#smurfPerSecond').text("Smurfs per second: " + smurfPerSecond + " smurf buddies");
                 clothing.numberOwned = clothing.numberOwned + 1;
@@ -206,7 +205,7 @@ var cost = Math.ceil(potion.basePrice * Math.pow(2, potion.numberOwned));
         $("#potion-count").text("Owned: " + potion.numberOwned);
         $("#potion-cost").text("Cost: " + potion.basePrice); 
         $('#smurfPerSecond').text("Smurfs per second: " + smurfPerSecond + " smurf buddies");
-                potion.numberOwned = potion.numberOwned + 1;
+        
                
 
         var newCost = Math.ceil(potion.basePrice * Math.pow(1.1, potion.numberOwned));
@@ -223,7 +222,7 @@ var cost = Math.ceil(charm.basePrice * Math.pow(3, charm.numberOwned));
         $('#charm-count').text('Owned: ' + charm.numberOwned);
         $('#charm-cost').text('Cost: ' + charm.basePrice);
         $('#smurfPerSecond').text("Smurfs per second: " + smurfPerSecond + " smurf buddies");
-                charm.numberOwned = charm.numberOwned + 1;
+            
 
         var newCost = Math.ceil(charm.basePrice * Math.pow(1.1, charm.numberOwned));
         $('#charm-cost').text("Cost: " + newCost)
@@ -239,7 +238,7 @@ var cost = Math.ceil(human.basePrice * Math.pow(3, human.numberOwned));
              $('#friend-count').text('Owned: ' + human.numberOwned);
              $('#friend-cost').text('Cost: ' + human.basePrice);
              $('#smurfPerSecond').text("Smurfs per second: " + smurfPerSecond + " smurf buddies");
-                human.numberOwned = human.numberOwned + 1;
+            
 
              var newCost = Math.ceil(human.basePrice * Math.pow(1.1, human.numberOwned));
               $('#friend-cost').text("Cost: " + newCost)
@@ -256,7 +255,7 @@ var cost = Math.ceil(human.basePrice * Math.pow(3, human.numberOwned));
              $('#portal-count').text('Owned: ' + portal.numberOwned);
              $('#portal-cost').text('Cost: ' + portal.basePrice);
              $('#smurfPerSecond').text("Smurfs per second: " + smurfPerSecond + " smurf buddies");
-                portal.numberOwned = portal.numberOwned + 1;
+            
 
              var newCost = Math.ceil(portal.basePrice * Math.pow(1.1, portal.numberOwned));
               $('#portal-cost').text("Cost: " + newCost)
