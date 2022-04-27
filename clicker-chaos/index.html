@@ -218,6 +218,7 @@ var cost = Math.ceil(charm.basePrice * Math.pow(3, charm.numberOwned));
             if(smurf >= cost) {
                 smurf = smurf - cost;
                 smurfPerSecond = smurfPerSecond += charm.rps;
+                charm.numberOwned++;
             alert('Smurfette has some golden locks, and I see you would like to purchase her secret, lucky charms! Congrats!!');
         $('#charm-count').text('Owned: ' + charm.numberOwned);
         $('#charm-cost').text('Cost: ' + charm.basePrice);
@@ -233,6 +234,7 @@ var cost = Math.ceil(human.basePrice * Math.pow(3, human.numberOwned));
             if(smurf >= cost) {
                 smurf = smurf - cost;
                 smurfPerSecond = smurfPerSecond += charm.rps;
+                human.numberOwned++;
             alert('I see you have found human friends to help you take care of your village. Give them a tip/gift and they will give you their help as well!');
              $('#friend-count').text('Owned: ' + human.numberOwned);
              $('#friend-cost').text('Cost: ' + human.basePrice);
@@ -249,6 +251,7 @@ var cost = Math.ceil(human.basePrice * Math.pow(3, human.numberOwned));
             if(smurf >= cost) {
                 smurf = smurf - cost;
                 smurfPerSecond = smurfPerSecond += charm.rps;
+                portal.numberOwned++;
             alert('CONGRATULATIONS! You are about to buy your ticket back to the smurfs village via the Magic Portal! Have a safe journey back home, and take all your smurf buddies with you!');
              $('#portal-count').text('Owned: ' + portal.numberOwned);
              $('#portal-cost').text('Cost: ' + portal.basePrice);
