@@ -171,7 +171,7 @@
                 smurf = smurf - cost;
                  smurfPerSecond = smurfPerSecond += Secrets.rps;
                 Secrets.numberOwned++;
-                prompt('Congrats! You have unlocked Papa Smurf and his secret candy stash! Click Ok to continue clicking!');
+                alert('Congrats! You have unlocked Papa Smurf and his secret candy stash! Click Ok to continue clicking!');
         $("#secrets-count").text("Owned: " + Secrets.numberOwned);
         $("#secrets-cost").text("Cost: " + Secrets.basePrice); 
         $('#smurfPerSecond').text("Smurfs per second: " + smurfPerSecond + " smurf buddies");
@@ -187,7 +187,7 @@
                     smurf = smurf - cost;
                     smurf = smurf+=75;
                     clothing.numberOwned++;
-                prompt('Congrats! You have unlocked clothing for your smurf buddies!You have earned 2 pieces of clothing with 75 smurf buddies each!!!');
+                alert('Congrats! You have unlocked clothing for your smurf buddies!You have earned 2 pieces of clothing with 75 smurf buddies each!!!');
                 smurfPerSecond = smurfPerSecond * 1.25;
                 $('#smurfPerSecond').text("Smurfs per second: " + smurfPerSecond + " smurf buddies");
                 clothing.numberOwned = clothing.numberOwned + 1;
@@ -201,7 +201,7 @@ var cost = Math.ceil(potion.basePrice * Math.pow(2, potion.numberOwned));
             if (smurf >= cost) {
                 smurf = smurf - cost;
                 smurfPerSecond = smurfPerSecond += potion.rps;
-            prompt('Oooh, you have unlocked Gargamel and his magical youth potion to magically create young smurf buddies for you! Keep clicking!');
+            alert('Oooh, you have unlocked Gargamel and his magical youth potion to magically create young smurf buddies for you! Keep clicking!');
         $("#potion-count").text("Owned: " + potion.numberOwned);
         $("#potion-cost").text("Cost: " + potion.basePrice); 
         $('#smurfPerSecond').text("Smurfs per second: " + smurfPerSecond + " smurf buddies");
@@ -217,7 +217,7 @@ var cost = Math.ceil(charm.basePrice * Math.pow(3, charm.numberOwned));
             if(smurf >= cost) {
                 smurf = smurf - cost;
                 smurfPerSecond = smurfPerSecond += charm.rps;
-            prompt('Smurfette has some golden locks, and I see you would like to purchase her secret, lucky charms! Congrats!!');
+            alert('Smurfette has some golden locks, and I see you would like to purchase her secret, lucky charms! Congrats!!');
         $('#charm-count').text('Owned: ' + charm.numberOwned);
         $('#charm-cost').text('Cost: ' + charm.basePrice);
         $('#smurfPerSecond').text("Smurfs per second: " + smurfPerSecond + " smurf buddies");
@@ -232,7 +232,7 @@ var cost = Math.ceil(human.basePrice * Math.pow(3, human.numberOwned));
             if(smurf >= cost) {
                 smurf = smurf - cost;
                 smurfPerSecond = smurfPerSecond += charm.rps;
-            prompt('I see you have found human friends to help you take care of your village. Give them a tip/gift and they will give you their help as well!');
+            alert('I see you have found human friends to help you take care of your village. Give them a tip/gift and they will give you their help as well!');
              $('#friend-count').text('Owned: ' + human.numberOwned);
              $('#friend-cost').text('Cost: ' + human.basePrice);
              $('#smurfPerSecond').text("Smurfs per second: " + smurfPerSecond + " smurf buddies");
@@ -248,7 +248,7 @@ var cost = Math.ceil(human.basePrice * Math.pow(3, human.numberOwned));
             if(smurf >= cost) {
                 smurf = smurf - cost;
                 smurfPerSecond = smurfPerSecond += charm.rps;
-            prompt('CONGRATULATIONS! You are about to buy your ticket back to the smurfs village via the Magic Portal! Have a safe journey back home, and take all your smurf buddies with you!');
+            alert('CONGRATULATIONS! You are about to buy your ticket back to the smurfs village via the Magic Portal! Have a safe journey back home, and take all your smurf buddies with you!');
              $('#portal-count').text('Owned: ' + portal.numberOwned);
              $('#portal-cost').text('Cost: ' + portal.basePrice);
              $('#smurfPerSecond').text("Smurfs per second: " + smurfPerSecond + " smurf buddies");
@@ -264,7 +264,7 @@ var cost = Math.ceil(human.basePrice * Math.pow(3, human.numberOwned));
                     smurf = smurf - cost;
                     smurf = smurf - Math.random() * 30;
                     smurf = smurf + Math.random() * 1000;
-                prompt('Sometimes you win, Sometimes you lose. Take the risk and Fate will choose. Anyway, no undoing now. BUT I promise you can randomly gain smurf buddies as well!');
+                alert('Sometimes you win, Sometimes you lose. Take the risk and Fate will choose. Anyway, no undoing now. BUT I promise you can randomly gain smurf buddies as well!');
                 smurfPerSecond = smurfPerSecond * 1.25;
                 $('#smurfPerSecond').text("Smurfs per second: " + smurfPerSecond + " smurf buddies");
                 shelter.numberOwned = shelter.numberOwned + 1;
@@ -278,7 +278,7 @@ var cost = Math.ceil(human.basePrice * Math.pow(3, human.numberOwned));
                 if (smurf >= cost) {
                     smurf = smurf - cost;
                     smurf = smurf+=100;
-                prompt('Food is good for the Soul!!!');
+                alert('Food is good for the Soul!!!');
                 smurfPerSecond = smurfPerSecond * 1.25;
                 $('#smurfPerSecond').text("Smurfs per second: " + smurfPerSecond + " smurf buddies");
                 food.numberOwned = food.numberOwned + 1;
@@ -293,7 +293,7 @@ var cost = Math.ceil(human.basePrice * Math.pow(3, human.numberOwned));
                 if (smurf >= cost) {
                     smurf = smurf - cost;
                     smurf = smurf - 300;
-                prompt('Food is good for the Soul!!!');
+                alert('Food is good for the Soul!!!');
                 smurfPerSecond = smurfPerSecond * 1.25;
                 $('#smurfPerSecond').text("Smurfs per second: " + smurfPerSecond + " smurf buddies");
                 car.numberOwned = car.numberOwned + 1;
@@ -308,7 +308,7 @@ var cost = Math.ceil(human.basePrice * Math.pow(3, human.numberOwned));
                  if (smurf >= cost) {
                     smurf = smurf - cost;
                     smurf = smurf *0;
-                prompt('Buy a Surprise! Take the risk....You never know!!');
+                alert('Buy a Surprise! Take the risk....You never know!!');
                 smurfPerSecond = smurfPerSecond * 1.25;
                 $('#smurfPerSecond').text("Smurfs per second: " + smurfPerSecond + " smurf buddies");
                 surprise.numberOwned = surprise.numberOwned + 1;
