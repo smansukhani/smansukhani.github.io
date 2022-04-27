@@ -166,7 +166,7 @@
             }
 
             function purchaseSecrets() {
-    var cost = Math.ceil(Secrets.basePrice * Math.pow(1.1, Secrets.numberOwned));
+    var cost = Math.ceil(Secrets.basePrice * Math.pow(3, Secrets.numberOwned));
          if (smurf >= cost) {
                 smurf = smurf - cost;
                  smurfPerSecond = smurfPerSecond += Secrets.rps;
@@ -177,12 +177,12 @@
         $('#smurfPerSecond').text("Smurfs per second: " + smurfPerSecond + " smurf buddies");
             
 
-        var newCost = Math.ceil(Secrets.basePrice * Math.pow(1.1, Secrets.numberOwned));
+        var newCost = Math.ceil(Secrets.basePrice * Math.pow(3, Secrets.numberOwned));
         $('#secrets-cost').text("Cost: " + newCost);
     }
 }
           function purchaseClothing() {
- var cost = Math.ceil(clothing.basePrice * Math.pow(1.1, clothing.numberOwned));
+ var cost = Math.ceil(clothing.basePrice * Math.pow(3, clothing.numberOwned));
                 if (smurf >= cost) {
                     smurf = smurf - cost;
                     smurf = smurf+=75;
@@ -191,12 +191,12 @@
                 $('#smurfPerSecond').text("Smurfs per second: " + smurfPerSecond + " smurf buddies");
                 clothing.numberOwned = clothing.numberOwned + 1;
                 $('#clothing-count').text("Owned: " + clothing.numberOwned);
-                var newCost = Math.ceil(clothing.basePrice * Math.pow(1.1, clothing.numberOwned));
+                var newCost = Math.ceil(clothing.basePrice * Math.pow(3, clothing.numberOwned));
                 $('#clothing-cost').text("Cost: " + newCost);
          }
     }
         function purchasePotions() {
-var cost = Math.ceil(potion.basePrice * Math.pow(2, potion.numberOwned));
+var cost = Math.ceil(potion.basePrice * Math.pow(3, potion.numberOwned));
             if (smurf >= cost) {
                 smurf = smurf - cost;
                 smurfPerSecond = smurfPerSecond += potion.rps;
@@ -208,7 +208,7 @@ var cost = Math.ceil(potion.basePrice * Math.pow(2, potion.numberOwned));
         
                
 
-        var newCost = Math.ceil(potion.basePrice * Math.pow(1.1, potion.numberOwned));
+        var newCost = Math.ceil(potion.basePrice * Math.pow(3, potion.numberOwned));
         $('#potion-cost').text("Cost: " + newCost);
     }
 }
@@ -224,7 +224,7 @@ var cost = Math.ceil(charm.basePrice * Math.pow(3, charm.numberOwned));
         $('#smurfPerSecond').text("Smurfs per second: " + smurfPerSecond + " smurf buddies");
             
 
-        var newCost = Math.ceil(charm.basePrice * Math.pow(1.1, charm.numberOwned));
+        var newCost = Math.ceil(charm.basePrice * Math.pow(3, charm.numberOwned));
         $('#charm-cost').text("Cost: " + newCost)
             }
     }
@@ -240,7 +240,7 @@ var cost = Math.ceil(human.basePrice * Math.pow(3, human.numberOwned));
              $('#smurfPerSecond').text("Smurfs per second: " + smurfPerSecond + " smurf buddies");
             
 
-             var newCost = Math.ceil(human.basePrice * Math.pow(1.1, human.numberOwned));
+             var newCost = Math.ceil(human.basePrice * Math.pow(3, human.numberOwned));
               $('#friend-cost').text("Cost: " + newCost)
             
             }
@@ -257,12 +257,12 @@ var cost = Math.ceil(human.basePrice * Math.pow(3, human.numberOwned));
              $('#smurfPerSecond').text("Smurfs per second: " + smurfPerSecond + " smurf buddies");
             
 
-             var newCost = Math.ceil(portal.basePrice * Math.pow(1.1, portal.numberOwned));
+             var newCost = Math.ceil(portal.basePrice * Math.pow(3, portal.numberOwned));
               $('#portal-cost').text("Cost: " + newCost)
         }
     }
     function purchaseShelter() {
- var cost = Math.ceil(shelter.basePrice * Math.pow(1.1, shelter.numberOwned));
+ var cost = Math.ceil(shelter.basePrice * Math.pow(3, shelter.numberOwned));
                 if (smurf >= cost) {
                     smurf = smurf - cost;
                     smurf = smurf - Math.random() * 30;
@@ -272,12 +272,12 @@ var cost = Math.ceil(human.basePrice * Math.pow(3, human.numberOwned));
                 $('#smurfPerSecond').text("Smurfs per second: " + smurfPerSecond + " smurf buddies");
                 shelter.numberOwned = shelter.numberOwned + 1;
                 $('#shelter-count').text("Owned: " + shelter.numberOwned);
-                var newCost = Math.ceil(shelter.basePrice * Math.pow(1.1, shelter.numberOwned));
+                var newCost = Math.ceil(shelter.basePrice * Math.pow(3, shelter.numberOwned));
                 $('#shelter-cost').text("Cost: " + newCost);
          }
     }
     function purchaseFood() {
-  var cost = Math.ceil(food.basePrice * Math.pow(1.1, food.numberOwned));
+  var cost = Math.ceil(food.basePrice * Math.pow(3, food.numberOwned));
                 if (smurf >= cost) {
                     smurf = smurf - cost;
                     smurf = smurf+=100;
@@ -286,13 +286,13 @@ var cost = Math.ceil(human.basePrice * Math.pow(3, human.numberOwned));
                 $('#smurfPerSecond').text("Smurfs per second: " + smurfPerSecond + " smurf buddies");
                 food.numberOwned = food.numberOwned + 1;
                 $('#food-count').text("Owned: " + food.numberOwned);
-                var newCost = Math.ceil(food.basePrice * Math.pow(1.1, food.numberOwned));
+                var newCost = Math.ceil(food.basePrice * Math.pow(3, food.numberOwned));
                 $('#food-cost').text("Cost: " + newCost);
     }
 
 }
         function purchaseCar() {
-    var cost = Math.ceil(car.basePrice * Math.pow(1.1, car.numberOwned));
+    var cost = Math.ceil(car.basePrice * Math.pow(3, car.numberOwned));
                 if (smurf >= cost) {
                     smurf = smurf - cost;
                     smurf = smurf - 300;
@@ -301,13 +301,13 @@ var cost = Math.ceil(human.basePrice * Math.pow(3, human.numberOwned));
                 $('#smurfPerSecond').text("Smurfs per second: " + smurfPerSecond + " smurf buddies");
                 car.numberOwned = car.numberOwned + 1;
                 $('#car-count').text("Owned: " + car.numberOwned);
-                var newCost = Math.ceil(food.basePrice * Math.pow(1.1, car.numberOwned));
+                var newCost = Math.ceil(food.basePrice * Math.pow(3, car.numberOwned));
                 $('#car-cost').text("Cost: " + newCost);
         }
      }
      
      function purchaseSurprise() {
- var cost = Math.ceil(surprise.basePrice * Math.pow(1.1, surprise.numberOwned));
+ var cost = Math.ceil(surprise.basePrice * Math.pow(3, surprise.numberOwned));
                  if (smurf >= cost) {
                     smurf = smurf - cost;
                     smurf = smurf *0;
@@ -316,7 +316,7 @@ var cost = Math.ceil(human.basePrice * Math.pow(3, human.numberOwned));
                 $('#smurfPerSecond').text("Smurfs per second: " + smurfPerSecond + " smurf buddies");
                 surprise.numberOwned = surprise.numberOwned + 1;
                 $('#surprise-count').text("Owned: " + surprise.numberOwned);
-                var newCost = Math.ceil(surprise.basePrice * Math.pow(1.1, surprise.numberOwned));
+                var newCost = Math.ceil(surprise.basePrice * Math.pow(3, surprise.numberOwned));
                 $('#surprise-cost').text("Cost: " + newCost);
      }
     }
