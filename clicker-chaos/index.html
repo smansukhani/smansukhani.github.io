@@ -201,6 +201,7 @@ var cost = Math.ceil(potion.basePrice * Math.pow(2, potion.numberOwned));
             if (smurf >= cost) {
                 smurf = smurf - cost;
                 smurfPerSecond = smurfPerSecond += potion.rps;
+                potion.numberOwned++;
             alert('Oooh, you have unlocked Gargamel and his magical youth potion to magically create young smurf buddies for you! Keep clicking!');
         $("#potion-count").text("Owned: " + potion.numberOwned);
         $("#potion-cost").text("Cost: " + potion.basePrice); 
