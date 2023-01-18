@@ -12,57 +12,25 @@ var level01 = function (window) {
         // this data will allow us to define all of the
         // behavior of our game
         var levelData = {
-            "name": "Robot Romp",
-            "number": 1, 
-            "speed": -3,
-            "gameItems": [
-                { "type": "sawblade", "x": 200, "y": 300 },
-                { 'type': 'sawblade', 'x': 500, 'y': 250 },
-                { "type": "sawblade", "x": 900, "y": 210 },
-                { "type": "sawblade", "x": 700, "y": 265 },
-                { 'type': 'sawblade', 'x': 1000, 'y': 300 },
-                { 'type': 'bat', 'x': 1800, 'y': 250 },
-                { 'type': 'enemy', 'x': 400, 'y': groundY - 30 },
-                { 'type': 'reward', 'x': 1600, 'y': groundY - 50 },
-                { 'type': 'bat', 'x': 1050, 'y': 300 },
-                { 'type': 'snake', 'x': 1500, 'y': 240 },
-                { 'type': 'snake', 'x': 1300, 'y': 250 },
-                { 'type': 'enemy', 'x': 800, 'y': groundY - 50 },
-                { 'type': 'enemy', 'x': 1600, 'y': groundY - 50 },
-                { 'type': 'enemy', 'x': 1200, 'y': groundY - 50 }, 
-                { 'type': 'enemy', 'x': 2000, 'y': groundY - 50 },
-                { 'type': 'enemy', 'x': 2400, 'y': groundY - 60 },
-                { 'type': 'enemy', 'x': 2600, 'y': groundY - 60 },
-                { 'type': 'enemy', 'x': 2800, 'y': groundY - 70 },
-                { 'type': 'enemy', 'x': 3000, 'y': groundY - 60 }, 
-                { 'type': 'enemy', 'x': 3200, 'y': groundY - 50 },
-                { 'type': 'enemy', 'x': 3400, 'y': groundY - 70 }, 
+            name: "Robot Romp",
+            number: 1, 
+            speed: -3,
+           gameItems: [
+               { 'type': 'enemy', 'x': 500, 'y': groundY - 75},
+              {'type': 'enemy', 'x': 700, 'y': 300},
+              { 'type': 'sawBlade', 'x': 1300, 'y': 400},
+
              ]
         };
-        for (var i = 0; i < levelData.gameItems.length; i++) { 
-            if (levelData.gameItems[i].type === 'enemy') {
-                createEnemy(levelData.gameItems[i].x, levelData.gameItems[i].y)
-            }
-
-            else if (levelData.gameItems[i].type === 'reward') {
-                createReward(levelData.gameItems[i].x, levelData.gameItems[i].y)
-            }
-
-           else if (levelData.gameItems[i].type === 'bat') {
-                createBat(levelData.gameItems[i].x, levelData.gameItems[i].y)
-            }
-
-           else if (levelData.gameItems[i].type === 'sawblade') {
-                createSawBlade(levelData.gameItems[i].x, levelData.gameItems[i].y)
-            }
-
-           else if (levelData.gameItems[i].type === 'snake') {
-                createSnake(levelData.gameItems[i].x, levelData.gameItems[i].y)
-            }
-
-
-        }
     
+        for (var i = 0; i < levelData.gameItems.length; i++) { 
+            createEnemy(levelData.gameItems[i].x, levelData.gameItems[i].y);
+            createBat(levelData.gameItems[i].x, levelData.gameItems[i].y);
+            createSnake(levelData.gameItems[i].x, levelData.gameItems[i].y);
+            createSawBlade(levelData.gameItems[i].x, levelData.gameItems[i].y);
+
+        };
+
         window.levelData = levelData;
         // set this to true or false depending on if you want to see hitzones
         game.setDebugMode(false);
@@ -91,11 +59,11 @@ var level01 = function (window) {
             game.addGameItem(batHitZone);
             var obstacleImage2 = draw.bitmap('img/bat2 (1)(1).png');
             batHitZone.addChild(obstacleImage2);
-            obstacleImage2.x = -25;
-            obstacleImage2.y= -25;
+            obstacleImage2.x = -85;
+            obstacleImage2.y= -85;
         }
         function createSnake(x,y) {
-            var hitZoneSize = 25;
+            var hitZoneSize = -20;
             var damageFromObstacle = 10;
             var snakeHitZone = game.createObstacle(hitZoneSize, damageFromObstacle);
             snakeHitZone.x = x;
@@ -103,19 +71,19 @@ var level01 = function (window) {
             game.addGameItem(snakeHitZone);
             var obstacleImage3 = draw.bitmap('img/snakefinal (1).png');
             snakeHitZone.addChild(obstacleImage3);
-            obstacleImage3.x = -25;
-            obstacleImage3.y = -25;
+            obstacleImage3.x = -110;
+            obstacleImage3.y = groundY - 250;
         }
 
         function createEnemy(x,y) {
-            var enemy = game.createGameItem('enemy',25);
+            var enemy = game.createGameItem('enemy', 25);
             var zombie = draw.bitmap('img/zombie(1) (1) (1).png');
             zombie.x = -50;
             zombie.y = -50;
             enemy.addChild(zombie);
             enemy.x = x;
             enemy.y = y;
-            enemy.velocityX = -5;
+            enemy.velocityX = -0.5;
             enemy.rotationVelocity = 0.01;
             enemy.onPlayerCollision = function() {
                 console.log('The enemy has hit Halle');
@@ -123,7 +91,7 @@ var level01 = function (window) {
             };
             enemy.onProjectileCollision = function() {
                 console.log('Halle has hit the enemy');
-                game.increaseScore(1000);
+                game.increaseScore(2000);
                 enemy.flyTo(1000, 1000);
             };
             game.addGameItem(enemy);
@@ -149,12 +117,19 @@ var level01 = function (window) {
             console.log('The lifeItem has touched Halle');
             game.changeIntegrity(+25);
             reward.fadeOut();
+            for (var i = 0; i < levelData.gameItems.length; i++) { 
+    
+                createEnemy(levelData.gameItems[i].x, levelData.gameItems[i].y);
+
+            }
+     
         
             };
                 reward.onProjectileCollision = function (){
                     console.log('Halle has touched the lifeItem');
                     game.increaseScore(1000);
                    reward.fadeOut();
+                  
             }
         }
         reward(1600, groundY -50);
