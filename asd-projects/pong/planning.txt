@@ -1,0 +1,47 @@
+User Story / Gameplay
+    Describe the gameplay
+        In this game, two players each control a paddle placed on opposite sides of the screen. A ball is hit back and forth between the two paddles, and the top and bottom walls. When the ball goes past one player's paddle, that player who misses the ball loses the point. The game ends when one player reaches 11 points.
+    What are the conditions when the game begins?
+        The game begins when two players have 0 points, and the ball is placed at the center of the screen. Each player's paddle is fixed on their side of the screen. 
+    Does the game have an end? If so, what are the conditions for when it ends?
+        The game ends when one player reaches 11 points, and they become the winner.
+    What ifs will there be? (5 - 3 related to ball, one paddle, one score)
+        If the ball hits the top or bottom wall, it will bounce back. 
+        If the ball hits the paddle, it will bounce back in the direction determined by the paddle.
+        If the ball hits the side walls, it will bounce back in a 90 degree angle.
+        If the paddle hits the ball, the ball will bounce off the paddle in the direction determined by the paddle.
+        If either player reaches a score of 11, the game will end. 
+Visual Game Components:
+    What are the visual game components? For example, in Bouncing Box, the game components were the board and the box.
+        The visual game components are the ball, the two paddles, and the top and bottom walls.
+    Which will be static? (the board)
+        The board is static.
+    Which will be animated? (the box)
+        The ball and paddles are animated. 
+    What data will you need to manage each game component? For example, in Bouncing Box, the data values were positionX, speedX, and points.
+        PositionX, PositionY, SpeedX, SpeedY, and size
+
+Events / Logic
+    What events will occur in this game? (timer events, keyboard events, clicking events?)
+        Keyboard events for paddle movement and collision events between the ball and the paddles and the walls.
+    How do those events affect the data of the program?
+        These events affect position and speed of ball and paddles.
+    
+    For each "event", write out the high-level logic of what will happen. It is better (and tricky) to be as specific as you can while remaining high-level!
+    For example: in bouncing box, when the box is clicked: 
+        The speed is increased
+        The point total goes up by 1 and is displayed on the box
+        The position of the box is reset to 0
+
+    Keyboard Events: 
+        If player1 presses the "up" key, move their paddle up by a specified amount.
+        If player1 presses the "down" key, move their paddle down by a specified amount.
+        If player2 presses the "up" key, move their paddle up by a specified amount.
+        If player2 presses the "down" key, move their paddle down by a specified amount.
+
+    Collision Events:
+        If the ball hits ("collides") with the paddle, you would change the balls speed and direction based on the position of the paddle.
+        If the ball hits the top or bottom wall, change its direction.
+        If the player misses the ball, the other player gets the point and the ball resets to its original center position.
+
+    THE GAME ENDS WHEN ONE PLAYER REACHES 11 POINTS & THE WINNER IS DECLARED.
